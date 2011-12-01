@@ -1,0 +1,228 @@
+
+/* --------------------------------- HOUSES --------------------------------- */
+
+/* Cuspids */
+#cuspids line, #Arrow {
+	fill:none;
+	stroke:#2279ab;
+	stroke-width:1;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+}
+
+/* Main cuspids */
+#cuspids line.I,
+#cuspids line.IV,
+#cuspids line.VII,
+#cuspids line.X,
+#cuspids line.XIII,
+#cuspids line.XVI,
+#cuspids line.XIX,
+#cuspids line.XXII,
+#cuspids line.XXV,
+#cuspids line.XXVIII,
+#cuspids line.XXXI,
+#cuspids line.XXXIV {
+	stroke-width:2;
+}
+
+/* Center of the chart */
+#houses .origin {
+	stroke:#808080;
+	stroke-width:0.5;
+}
+
+/* Numbers */
+#cuspids text {
+	font-size:12px;
+	fill:#2279ab;
+	font-family:Georgia;
+}
+
+/* ------------------------------- ZODIAC ----------------------------------- */
+
+#zodiac>#cercle>path.disc {
+	fill:#f8f8c1;
+	stroke:#b58c00;
+	stroke-width:2;
+}
+
+#zodiac>#cercle>path {
+	stroke:#b58d00;
+	stroke-width:2;
+}
+
+/* Signs */
+#zodiac>#signs path {
+	fill:#f8f8c1;
+	stroke:#71b0c7;
+	stroke-width:2;
+	stroke-linecap:round;
+	stroke-linejoin:round;
+}
+
+#ascendant {
+	font-size:16px;
+	font-style:normal;
+	font-weight:bold;
+	fill:#2279ab;
+	stroke-width:1px;
+	font-family:Georgia;
+}
+
+/* ------------------------------ ASPECTS ------------------------------------*/
+
+#aspects>line {
+	stroke-linecap:round;
+}
+
+#aspects>line.Opposition,
+#aspects>line.Square {
+	stroke:red;
+}
+
+#aspects>line.Quincunx {
+	stroke:green;
+}
+
+#aspects>line.Trine,
+#aspects>line.Sextile, 
+#aspects>line.Semi-sextile {
+	stroke:blue;
+}
+
+#aspects path {
+	stroke:#FCC;
+	stroke-width:10;
+	fill:none;
+}
+
+/* disable aspect for nodes */
+#aspects>line.TrueSouthNodeTrueNode,
+#aspects>line.TrueNodeTrueSouthNode,
+#aspects>line.MeanSouthNodeMeanNode,
+#aspects>line.MeanNodeMeanSouthNode,
+#aspects>line.TrueSouthNodeMeanNode,
+#aspects>line.MeanNodeTrueSouthNode,
+#aspects>line.MeanSouthNodeTrueNode,
+#aspects>line.MeanNodeTrueSouthNode {
+	display:none;
+}
+
+/* ------------------------------ BODIES ------------------------------------ */
+
+defs g *,
+#bodies use * {
+	stroke:red;
+	stroke-width:1.25;
+	fill:white;
+	stroke-linecap:round;
+}
+
+#bodies line {
+	stroke: red;
+	stroke-linecap:round;
+}
+
+#bodies text {
+	font-size:9px;
+	font-style:normal;
+	fill:red;
+	stroke:none;
+	stroke-width:1;
+	stroke-linecap:butt;
+	stroke-linejoin:miter;
+	font-family:Georgia;
+}
+
+/* Nodes and Lilith */
+defs g#OscuApogee *, 
+defs g#MeanApogee *, 
+defs g#TrueNode *, 
+defs g#MeanNode *,
+defs g#TrueSouthNode *, 
+defs g#MeanSouthNode *,
+#bodies use.OscuApogee *, 
+#bodies use.MeanApogee *, 
+#bodies use.TrueNode *, 
+#bodies use.MeanNode *,
+#bodies use.TrueSouthNode *, 
+#bodies use.MeanSouthNode *,
+#bodies line.OscuApogee, 
+#bodies line.MeanApogee, 
+#bodies line.TrueNode, 
+#bodies line.MeanNode,
+#bodies line.TrueSouthNode, 
+#bodies line.MeanSouthNode {
+	stroke:black;
+}
+
+#bodies text.OscuApogee, 
+#bodies text.MeanApogee, 
+#bodies text.TrueNode, 
+#bodies text.MeanNode,
+#bodies text.TrueSouthNode, 
+#bodies text.MeanSouthNode {
+	fill:black;
+}
+
+/* Asteroids */
+defs g#Chiron *, 
+defs g#Pholus *, 
+defs g#Ceres *,
+defs g#Pallas *,
+defs g#Juno *,
+defs g#Vesta *,
+#bodies use.Chiron *, 
+#bodies use.Pholus *, 
+#bodies use.Ceres *,
+#bodies use.Pallas *,
+#bodies use.Juno *,
+#bodies use.Vesta *,
+#bodies line.Chiron, 
+#bodies line.Pholus, 
+#bodies line.Ceres, 
+#bodies line.Pallas, 
+#bodies line.Juno, 
+#bodies line.Vesta {
+	stroke:#800;
+}
+
+#bodies text.Chiron, 
+#bodies text.Pholus, 
+#bodies text.Ceres, 
+#bodies text.Pallas, 
+#bodies text.Juno, 
+#bodies text.Vesta {
+	fill:#800;
+}
+
+/* --------------------------- ANIMATIONS ----------------------------------- */
+
+#zodiac>#signs g:hover path,
+#bodies use:hover *,
+#aspects line:hover {
+	stroke-width: 0.2em;
+}
+
+#aspects path:hover {
+	stroke:#DAA;
+	stroke-width: 20;
+}
+
+#houses path {
+	stroke:transparent;
+	stroke-opacity:0.5;
+	stroke-width:90;
+	fill:none;
+}
+
+#houses path:hover {
+	stroke:#CCF;
+}
+
+#zodiac>#signs g path.zone {
+	stroke:#b58c00;
+	fill:#f8f8c1;
+}
+

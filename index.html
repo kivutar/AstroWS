@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+	<head>
+		<title>AstroWS</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="description" content="AstroWS is a set of REST web services about astrology." />
+		<meta name="keywords" content="AstroWS Astrology Web Services SVG XSLT REST" />
+	</head>
+	<body>
+		<h1>AstroWS</h1>
+		<p>AstroWS is a set of REST web services about astrology.</p>
+		<h2>Overview</h2>
+		<p><img src="astrows_overview.png" alt="AstroWS Overview" /></p>
+		<h2>Services</h2>
+		<h3>chartinfo.py</h3>
+		<h4>Description</h4>
+		<p>Returns houses, bodies positions, aspects and conjunctions for a given place and datetime.</p>
+		<h4>Arguments</h4>
+		<dl>
+			<dt>lat (decimal)</dt>
+			<dd>Birth place latitude. Exemple: 43.07</dd>
+			<dt>lon (decimal)</dt>
+			<dd>Birth place longitude. Exemple: 5.55</dd>
+			<dt>year (integer)</dt>
+			<dd>Year of birth. Exemple: 1984</dd>
+			<dt>month (integer)</dt>
+			<dd>Month of birth. Exemple: 06</dd>
+			<dt>day (integer)</dt>
+			<dd>Day of birth. Exemple: 08</dd>
+			<dt>time (double)</dt>
+			<dd>Hour of birth. Exemple: 15.25 (means 15:15)</dd>
+			<dt>hsys (character)</dt>
+			<dd>House system. Possible values:
+				<dl>
+					<dt>P</dt><dd>Placidus</dd>
+					<dt>K</dt><dd>Koch</dd>
+					<dt>O</dt><dd>Porphyrius</dd>
+					<dt>R</dt><dd>Regiomontanus</dd>
+					<dt>C</dt><dd>Campanus</dd>
+					<dt>A or E</dt><dd>Equal (cusp 1 is Ascendant)</dd>
+					<dt>V</dt><dd>Vehlow equal (Asc. in middle of house 1)</dd>
+					<dt>W</dt><dd>Whole sign</dd>
+					<dt>X</dt><dd>axial rotation system</dd>
+					<dt>H</dt><dd>azimuthal or horizontal system</dd>
+					<dt>T</dt><dd>Polich/Page ('topocentric' system)</dd>
+					<dt>B</dt><dd>Alcabitus</dd>
+					<dt>M</dt><dd>Morinus</dd>
+					<dt>U</dt><dd>Krusinski-Pisa</dd>
+					<dt>G</dt><dd>Gauquelin sectors</dd>
+				</dl> 
+			</dd>
+			<dt>display (integer list)</dt>
+			<dd>Celestial bodies to display. Exemple: 0,1,2,3. Comma separated list of these values:
+				<dl>
+					<dt>0</dt><dd>Sun</dd>
+					<dt>1</dt><dd>Moon</dd>
+					<dt>2</dt><dd>Mercury</dd>
+					<dt>3</dt><dd>Venus</dd>
+					<dt>4</dt><dd>Mars</dd>
+					<dt>5</dt><dd>Jupiter</dd>
+					<dt>6</dt><dd>Saturn</dd>
+					<dt>7</dt><dd>Uranus</dd>
+					<dt>8</dt><dd>Neptune</dd>
+					<dt>9</dt><dd>Pluto</dd>
+					<dt>10</dt><dd>MeanNode</dd>
+					<dt>11</dt><dd>TrueNode</dd>
+					<dt>12</dt><dd>MeanApogee</dd>
+					<dt>13</dt><dd>OscuApogee</dd>
+					<dt>14</dt><dd>Earth</dd>
+					<dt>15</dt><dd>Chiron</dd>
+					<dt>16</dt><dd>Pholus</dd>
+					<dt>17</dt><dd>Ceres</dd>
+					<dt>18</dt><dd>Pallas</dd>
+					<dt>19</dt><dd>Juno</dd>
+					<dt>20</dt><dd>Vesta</dd>
+					<dt>21</dt><dd>InterpretedApogee</dd>
+					<dt>22</dt><dd>InterpretedPerigee</dd>
+					<dt>23</dt><dd>MeanSouthNode</dd>
+					<dt>24</dt><dd>TrueSouthNode</dd>
+				</dl> 
+			</dd>
+		</dl>
+		<h4>Exemple call</h4>
+		<p><a href="chartinfo.py?name=Jean-André Santoni&city=Ollioules&lat=43&lon=5&year=1984&month=6&day=8&time=13.25&hsys=G&display=0,1,2,3,4,5,6,7,8,9,10,12,23">
+		chartinfo.py?name=Jean-André Santoni&city=Ollioules&lat=43&lon=5&year=1984&month=6&day=8&time=13.25&hsys=G&display=0,1,2,3,4,5,6,7,8,9,10,12,23</a></p>
+		<h3>transform.py</h3>
+		<h4>Description</h4>
+		<p>XSLT processor, used to generate SVG natal chart from chartinfo.py output.</p>
+		<h4>Arguments</h4>
+		<dl>
+			<dt>xml (url)</dt>
+			<dd>URL of the XML file to tranform. Must be URL encoded. Exemple: <a href="chartinfo.py?lat=17.9970194353704&lon=-76.7935752868652&year=1945&month=6&day=02&time=6.75&hsys=E&display=0,1,2,3,4,5,6,7,8,9,10,12,23">http%3A%2F%2Fastro.kivutar.me%2Fchartinfo.py%3Flat%3D17.9970194353704%26lon%3D-76.7935752868652%26year%3D1945%26month%3D6%26day%3D02%26time%3D6.75%26hsys%3DE%26display%3D0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C12%2C23</a></dd>
+			<dt>xsl (url)</dt>
+			<dd>URL of the XSL file. Must be URL encoded too. Exemple: <a href="wheel.xsl">wheel.xsl</a></dd>
+		</dl>
+		<h4>Exemple call</h4>
+		<p><a href="transform.py?xml=http%3A%2F%2Fastro.kivutar.me%2Fchartinfo.py%3Flat%3D17.9970194353704%26lon%3D-76.7935752868652%26year%3D1945%26month%3D6%26day%3D02%26time%3D6.75%26hsys%3DE%26display%3D0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C12%2C23&xsl=wheel.xsl">
+		transform.py?xml=http%3A%2F%2Fastro.kivutar.me%2Fchartinfo.py%3Flat%3D17.9970194353704%26lon%3D-76.7935752868652%26year%3D1945%26month%3D6%26day%3D02%26time%3D6.75%26hsys%3DE%26display%3D0%2C1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C12%2C23&xsl=wheel.xsl</a></p>
+		<h3>rasterize.py</h3>
+		<h4>Description</h4>
+		<p>SVG to PNG converter.</p>
+		<h4>Arguments</h4>
+		<dl>
+			<dt>svg (url)</dt>
+			<dd>URL of the SVG file to convert. Must be URL encoded. Exemple: <a href="http://www.croczilla.com/svg/samples/lion/lion.svg">http://www.croczilla.com/svg/samples/lion/lion.svg</a></dd>
+		</dl>
+		<h4>Exemple call</h4>
+		<p><a href="rasterize.py?svg=http://www.croczilla.com/svg/samples/lion/lion.svg">
+		rasterize.py?svg=http://www.croczilla.com/svg/samples/lion/lion.svg</a></p>
+		<h2>Frontend</h2>
+		<p>We provide an xHTML form at <a href="gui/form.html">gui/form.html</a> as frontend to AstroWS.</p>
+	</body>
+</html>
+

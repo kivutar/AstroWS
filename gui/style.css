@@ -1,0 +1,163 @@
+@import url(jquery-ui-1.7.1.custom.css);
+
+* {
+	margin : 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background: #dee7ec url("img/shadow.png") repeat-x;
+	padding: 20px;
+	font-family: Sans;
+	font-size: 12px;
+}
+
+div.main {
+	max-width: 750px;
+	margin: 0 auto;
+	padding: 15px;
+	background-color: #fff;
+	border: 1px solid #8cacbb;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+h1, h2 {
+	padding: 20px 0;
+	color: #436976;
+}
+
+h1 {
+	text-align: center;
+}
+
+p {
+	padding: 5px 0;
+}
+
+fieldset {
+	padding: 10px;
+	background: #dee7ec url("img/reflect.png") repeat-x;
+	border: 1px solid #8cacbb;
+	border-radius: 15px;
+	-moz-border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+label {
+	display: block;
+	width: 34%;
+	float: left;
+	font-weight: bold;
+	padding: 4px 0;
+}
+
+span {
+	font-size: 10px;
+	padding: 4px;
+}
+
+input, select {
+	padding: 3px;
+	background-color: #fff;
+	border: 1px solid #8cacbb;	
+	width: 33%;
+	max-width: 238px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	background: white url("img/input.png") repeat-x;
+}
+
+input:focus {
+	border: 1px solid #436976;
+}
+
+input[type='button'] {
+	border: 2px solid #436976;
+	font-weight: bold;
+	background: url("img/button.png") 0 50%;
+	width: auto;
+}
+
+input[type='button']:hover {
+	border-color: #8cacbb;
+	cursor: pointer;
+}
+
+legend {
+	text-indent: 30px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #436976;
+}
+
+#user-info legend {
+	background: url("img/user-info.png") no-repeat 0 50%;
+}
+
+#birth-place legend {
+	background: url("img/applications-internet.png") no-repeat 0 50%;
+}
+
+#birth-date legend {
+	background: url("img/x-office-calendar.png") no-repeat 0 50%;
+}
+
+#solar-return legend {
+	background: url("img/weather-clear.png") no-repeat 0 50%;
+}
+
+#look legend {
+	background: url("img/applications-graphics.png") no-repeat 0 50%;
+}
+
+div.footer {
+	text-align: center;
+	padding-top: 20px;
+}
+
+p.copyright {
+	padding: 10px 0;
+	font-size: 10px;
+	color: #436976;
+}
+
+p.copyright a, a:link, a:visited a:active {
+	color: #436976;
+}
+
+#cities table, 
+#newcities table {
+	width: 100%;
+}
+
+#cities th, 
+#newcities th {
+	padding: 5px;
+	border-bottom: 1px solid #8cacbb;
+}
+
+#cities tr:hover td, 
+#newcities tr:hover td {
+	background: white;
+}
+
+#cities td, 
+#newcities td {
+	padding: 2px;
+	border-bottom: 1px solid #8cacbb;
+	background: #eff3f6;
+	font-size:10px;
+}
+
+#cities tr td:first-child,
+#newcities tr td:first-child {
+	border-left: 1px solid #8cacbb;
+}
+
+#cities tr td:last-child,
+#newcities tr td:last-child {
+	border-right: 1px solid #8cacbb;
+}
+
