@@ -32,6 +32,13 @@
 	stroke-width:0.5;
 }
 
+/* Circle of houses used in the default xslt */
+#houses>#cercle {
+	fill:#dff0fa;
+	stroke:#2279ab;
+	stroke-width:1;
+}
+
 /* Numbers */
 #cuspids text {
 	font-size:12px;
@@ -54,7 +61,7 @@
 
 /* Signs */
 #zodiac>#signs path {
-	fill:#f8f8c1;
+	fill:none;
 	stroke:#71b0c7;
 	stroke-width:2;
 	stroke-linecap:round;
