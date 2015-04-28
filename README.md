@@ -3,6 +3,11 @@ AstroWS
 
 AstroWS is a set of web services about astrology.
 
+Dependancies
+------------
+
+    sudo pip install pyswisseph 4Suite-XML
+
 Services
 --------
 
