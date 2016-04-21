@@ -15,5 +15,6 @@ if (get.has_key('xml') and get.has_key('xsl')):
 	req = urllib2.Request(url)
 	handle = urllib2.urlopen(req)
 
-	print "Content-Type: image/svg+xml\n"
+	print "Content-Type: image/svg+xml"
+	print "Access-Control-Allow-Origin: *\n"
 	print Transform(handle.read(), get['xsl'].value)	

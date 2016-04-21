@@ -17,7 +17,7 @@
 				});
 				$('#search').click(function() {
 					$('#cities').html('<img src="img/ajax.gif" /> Loading...');
-					$.getJSON('http://ws.geonames.org/searchJSON?q='+$('#city').val()+'&maxRows=10&style=medium&username=kivutar&callback=?',
+					$.getJSON('http://api.geonames.org/searchJSON?q='+$('#city').val()+'&maxRows=10&style=medium&username=kivutar&callback=?',
 					function(data){
 						table  = '<table cellspacing="0" cellpadding="0">';
 						table += '  <tr><th>#</th><th>Name</th><th>Country</th><th>Admin code</th><th>Latitude</th><th>Longitude</th></tr>';
@@ -37,7 +37,7 @@
 				});
 				$('#newsearch').click(function() {
 					$('#newcities').html('<img src="img/ajax.gif" /> Loading...');
-					$.getJSON('http://ws.geonames.org/searchJSON?q='+$('#newcity').val()+'&maxRows=10&style=medium&username=kivutar&callback=?',
+					$.getJSON('http://api.geonames.org/searchJSON?q='+$('#newcity').val()+'&maxRows=10&style=medium&username=kivutar&callback=?',
 					function(data){
 						table  = '<table cellspacing="0" cellpadding="0">';
 						table += '  <tr><th>#</th><th>Name</th><th>Country</th><th>Admin code</th><th>Latitude</th><th>Longitude</th></tr>';

@@ -68,7 +68,7 @@
 				});
 				$('#search').click(function() {
 					$('#cities').html('<img src="img/ajax.gif" /> Loading...');
-					$.getJSON('http://ws.geonames.org/searchJSON?q='+$('#city').val()+'&maxRows=10&style=medium&callback=?',
+					$.getJSON('http://api.geonames.org/searchJSON?q='+$('#city').val()+'&maxRows=10&style=medium&callback=?',
 					function(data){
 						table  = '<table class="bordered-table zebra-striped span8 condensed-table">';
 						table += '  <tr><th>#</th><th>Name</th><th>Country</th><th>Admin code</th><th>Latitude</th><th>Longitude</th></tr>';
